@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 2px solid maroon;
+    }
+    th, td {
+      border: 1px solid maroon;
+      padding: 8px;
+      text-align: center;         /* center horizontally */
+      vertical-align: middle;     /* center vertically */
+    }
+    th {
+      background-color: maroon;
+      color: white;
+    }
+    .semester-cell {
+      background-color: orange;
+    }
+    .semester-header {
+      background-color: tan;
+    }
+  </style>
+</head>
+<body>
+  <table>
+    <caption>IT Semester 3 &amp; 4 Subject List</caption>
+    <thead>
+      <tr>
+        <th rowspan="2">Semester</th>
+        <th colspan="2">Semester 3 Subjects</th>
+      </tr>
+      <tr>
+        <th>Subject Name</th>
+        <th>Course Code</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="semester-header">
+        <td rowspan="7" class="semester-cell">3</td>
+        <td>Community Engagement Program</td>
+        <td>UXSIP5001CE1PR</td>
+      </tr>
+      <tr><td>Web Designing and Programming</td><td>USITY5001VS1</td></tr>
+      <tr><td>Database Management Systems</td><td>USITY5002CR1</td></tr>
+      <tr><td>OOPS With JAVA</td><td>UAHIN5001AE1</td></tr>
+      <tr><td>OE 1 (Open Elective)</td><td>UACOM5001OE1</td></tr>
+      <tr><td>Minor (BMS/BAF/BMM)</td><td>UCMGS5001MN1</td></tr>
+      <tr><td>Introduction to Hindi Poetry</td><td>UAHIN5001AE1</td></tr>
+      <!-- Semester 4 -->
+      <tr class="semester-header">
+        <td rowspan="5" class="semester-cell">4</td>
+        <td>Data Structures Using JAVA</td>
+        <td>USITY5003CR1</td>
+      </tr>
+      <tr><td>Discrete Mathematics and Statistics</td><td>USITY5004CR1</td></tr>
+      <tr><td>OE (Open Elective)</td><td>UACOM5001OE1</td></tr>
+      <tr><td>Minor (BMS/BAF/BMM)</td><td>UCMGS5001MN1</td></tr>
+    </tbody>
+  </table>
+</body>
+</html>
