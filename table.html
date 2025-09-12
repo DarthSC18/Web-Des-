@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Student Database Simulation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    table {
+      width: 600px;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+    th, td {
+      padding: 8px 12px;
+      border: 1px solid #ccc;
+      text-align: left;
+    }
+    th {
+      background-color: #f4f4f4;
+    }
+  </style>
+</head>
+<body>
+  <h1>Student Personal Details</h1>
+  <table id="personalTable">
+    <thead>
+      <tr>
+        <th>UID</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Date of Birth</th>
+      </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+  </table>
+
+  <h1>Student Marks</h1>
+  <table id="marksTable">
+    <thead>
+      <tr>
+        <th>UID</th>
+        <th>Marks 1</th>
+        <th>Marks 2</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+  </table>
+
+  <script>
+ 
+    const personalDetails = [
+      { uid: 1, name: "Joshua", address: "Ghatkopar", date_of_birth: "2006-05-15" },
+      { uid: 2, name: "Ryan", address: "Borivali", date_of_birth: "2006-11-23" },
+      { uid: 3, name: "Dwayne", address: "Bandra", date_of_birth: "2006-07-30" }
+    ];
+
+    const marks = [
+      { uid: 1, marks1: 85, marks2: 90, total: 175 },
+      { uid: 2, marks1: 78, marks2: 82, total: 160 },
+      { uid: 3, marks1: 92, marks2: 88, total: 180 }
+    ];
+
+    function loadPersonalDetails() {
+      const tbody = document.querySelector("#personalTable tbody");
+      tbody.innerHTML = "";
+      personalDetails.forEach(student => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td>${student.uid}</td>
+          <td>${student.name}</td>
+          <td>${student.address}</td>
+          <td>${student.date_of_birth}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function loadMarks() {
+      const tbody = document.querySelector("#marksTable tbody");
+      tbody.innerHTML = ""; 
+      marks.forEach(record => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td>${record.uid}</td>
+          <td>${record.marks1}</td>
+          <td>${record.marks2}</td>
+          <td>${record.total}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    window.onload = function () {
+      loadPersonalDetails();
+      loadMarks();
+    };
+  </script>
+</body>
+</html>
