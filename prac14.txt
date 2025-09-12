@@ -1,0 +1,8 @@
+Prac 14, write a program to display dynamic content using json and ajx
+
+Write a program in php to demonstrate mysql database integration.
+Q2)
+Create a database student, in the database ,create 2 tables first table personal details, it should have the following fields, first is uid, name, address, date of birth
+Second table:marks table following fields should be there, uid, marks 1, marks 2 and total.
+Q3)
+Insert 2 appropriate records in each of the table
