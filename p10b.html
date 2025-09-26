@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <title>jQuery Show and Hide Demo</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+      #box {
+        width: 200px;
+        height: 150px;
+        background-color: #4caf50;
+        margin-bottom: 10px;
+        display: none; 
+      }
+    </style>
+  </head>
+  <body>
+    <button id="showBtn">Show</button>
+    <button id="hideBtn">Hide</button>
+
+    <div id="box"></div>
+
+    <script>
+      $(document).ready(function () {
+        $("#showBtn").click(function () {
+          $("#box").show(1000); // Show with 1 second animation
+        });
+        $("#hideBtn").click(function () {
+          $("#box").hide(1000); // Hide with 1 second animation
+        });
+      });
+    </script>
+  </body>
+</html>

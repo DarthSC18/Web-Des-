@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Class Timetable</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      th,
+      td {
+        border: 1px solid #333;
+        padding: 8px;
+        text-align: left;
+      }
+      th {
+        background: #f0f0f0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Monday Timetable</h1>
+    <table id="timetable">
+      <thead>
+        <tr>
+          <th>Subject</th>
+          <th>Time</th>
+          <th>Room</th>
+          <th>Teacher</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+
+    <script>
+      fetch("monday_timetable.xml")
+        .then((response) => response.text())
+        .then((xmlText) => {
+          const parser = new DOMParser();
+          const xmlDoc = parser.parseFromString(xmlText, "application/xml");
+
+          const classes = xmlDoc.getElementsByTagName("class");
+
+          const tbody = document.querySelector("#timetable tbody");
+
+          // Loop through classes and create rows
+          for (let cls of classes) {
+            const subject = cls.getElementsByTagName("subject")[0].textContent;
+            const startTime =
+              cls.getElementsByTagName("startTime")[0].textContent;
+            const endTime = cls.getElementsByTagName("endTime")[0].textContent;
+            const room = cls.getElementsByTagName("room")[0].textContent;
+            const teacher = cls.getElementsByTagName("teacher")[0].textContent;
+
+            const row = document.createElement("tr");
+            row.innerHTML = `
+          <td>${subject}</td>
+          <td>${startTime} - ${endTime}</td>
+          <td>${room}</td>
+          <td>${teacher}</td>
+        `;
+
+            tbody.appendChild(row);
+          }
+        })
+        .catch((err) => console.error("Error loading XML:", err));
+    </script>
+  </body>
+</html>

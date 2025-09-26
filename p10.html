@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>jQuery Animate Demo</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+      #animateBox {
+        width: 100px;
+        height: 100px;
+        background-color: #2196f3;
+        position: relative;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="animateBtn">Animate</button>
+
+    <div id="animateBox"></div>
+
+    <script>
+      $(document).ready(function () {
+        $("#animateBtn").click(function () {
+          $("#animateBox").animate(
+            {
+              left: "+=150px", // Move right by 150px
+              height: "150px", // Increase height
+              width: "150px", // Increase width
+              opacity: 0.5, // Change opacity
+            },
+            1000
+          ); // Duration 1 second
+        });
+      });
+    </script>
+  </body>
+</html>

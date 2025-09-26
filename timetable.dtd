@@ -1,0 +1,8 @@
+<!ELEMENT timetable (day, class+)>
+<!ELEMENT day (#PCDATA)>
+<!ELEMENT class (subject, startTime, endTime, teacher, room)>
+<!ELEMENT subject (#PCDATA)>
+<!ELEMENT startTime (#PCDATA)>
+<!ELEMENT endTime (#PCDATA)>
+<!ELEMENT teacher (#PCDATA)>
+<!ELEMENT room (#PCDATA)>

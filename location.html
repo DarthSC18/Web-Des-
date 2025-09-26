@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Location Object</title>
+  </head>
+  <body>
+    <p id="href"></p>
+    <p id="hostname"></p>
+    <p id="pathname"></p>
+    <p id="protocol"></p>
+    <p id="port"></p>
+
+    <button onclick="redirect()">Surprise!</button>
+    <button onclick="reloadPage()">Reload Page</button>
+
+    <script>
+      document.getElementById("href").innerHTML = "Full URL: " + location.href;
+      document.getElementById("hostname").innerHTML =
+        "Hostname: " + location.hostname;
+      document.getElementById("pathname").innerHTML =
+        "Pathname: " + location.pathname;
+      document.getElementById("protocol").innerHTML =
+        "Protocol: " + location.protocol;
+      document.getElementById("port").innerHTML = "Port: " + location.port;
+
+      function redirect() {
+        location.assign("https://www.youtube.com/watch?v=xvFZjo5PgG0");
+      }
+
+      function reloadPage() {
+        location.reload();
+      }
+    </script>
+  </body>
+</html>

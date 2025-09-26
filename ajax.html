@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>AJAX and JSON Example</title>
+  </head>
+  <body>
+    <h2>AJAX + JSON Demo</h2>
+    <button onclick="loadData()">Load Data</button>
+
+    <div id="output">
+      <p><i>Click the button to load JSON data...</i></p>
+    </div>
+
+    <script>
+      function loadData() {
+        let xhr = new XMLHttpRequest();
+        // Using a free JSON placeholder API
+        xhr.open("GET", "https://jsonplaceholder.typicode.com/users/1", true);
+
+        xhr.onload = function () {
+          if (this.status === 200) {
+            // Parse JSON response
+            let user = JSON.parse(this.responseText);
+
+            // Display user data dynamically
+            document.getElementById("output").innerHTML = `
+            <strong>Name:</strong> ${user.name} <br>
+            <strong>Email:</strong> ${user.email} <br>
+            <strong>City:</strong> ${user.address.city}
+          `;
+          }
+        };
+
+        xhr.onerror = function () {
+          document.getElementById("output").innerHTML =
+            "<span style='color:red;'>Error loading JSON data.</span>";
+        };
+
+        xhr.send();
+      }
+    </script>
+  </body>
+</html>
